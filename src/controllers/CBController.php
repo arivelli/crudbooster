@@ -1,4 +1,4 @@
-<?php namespace crocodicstudio\crudbooster\controllers;
+<?php namespace arivelli\crudbooster\controllers;
 
 error_reporting(E_ALL ^ E_NOTICE);
 

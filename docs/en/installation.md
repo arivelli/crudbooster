@@ -28,7 +28,7 @@ $ composer require crocodicstudio/crudbooster=5.4.*
 
 2. Add the following class, to "providers" array in the file **config/app.php**
 ```php
-crocodicstudio\crudbooster\CRUDBoosterServiceProvider::class,
+arivelli\crudbooster\CRUDBoosterServiceProvider::class,
 ```
 
 3. Setting the database configuration, open .env file at project root directory
