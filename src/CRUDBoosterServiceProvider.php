@@ -70,13 +70,13 @@ class CRUDBoosterServiceProvider extends ServiceProvider
         $this->commands(['\arivelli\crudbooster\commands\CrudboosterVersionCommand']);
 
         $this->app->register('Barryvdh\DomPDF\ServiceProvider');
-        $this->app->register('Maatwebsite\Excel\ExcelServiceProvider');
+        //$this->app->register('Maatwebsite\Excel\ExcelServiceProvider');
         $this->app->register('Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider');
         $this->app->register('Intervention\Image\ImageServiceProvider');
 
         $loader = AliasLoader::getInstance();
         $loader->alias('PDF', 'Barryvdh\DomPDF\Facade');
-        $loader->alias('Excel', 'Maatwebsite\Excel\Facades\Excel');
+        //$loader->alias('Excel', 'Maatwebsite\Excel\Facades\Excel');
         $loader->alias('Image', 'Intervention\Image\Facades\Image');
         $loader->alias('CRUDBooster', 'arivelli\crudbooster\helpers\CRUDBooster');
         $loader->alias('CB', 'arivelli\crudbooster\helpers\CB');

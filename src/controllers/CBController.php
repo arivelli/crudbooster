@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Maatwebsite\Excel\Facades\Excel;
+//use Maatwebsite\Excel\Facades\Excel;
 use Schema;
 
 class CBController extends Controller
@@ -660,7 +660,7 @@ class CBController extends Controller
 
                 return $pdf->stream($filename.'.pdf');
                 break;
-            case 'xls':
+            /*case 'xls':
                 Excel::create($filename, function ($excel) use ($response) {
                     $excel->setTitle($filename)->setCreator("crudbooster.com")->setCompany(CRUDBooster::getSetting('appname'));
                     $excel->sheet($filename, function ($sheet) use ($response) {
@@ -677,7 +677,7 @@ class CBController extends Controller
                         $sheet->loadview('crudbooster::export', $response);
                     });
                 })->export('csv');
-                break;
+                break;*/
         }
     }
 
@@ -1468,7 +1468,7 @@ class CBController extends Controller
         $data['page_menu'] = Route::getCurrentRoute()->getActionName();
         $data['page_title'] = 'Import Data '.$module->name;
 
-        if (Request::get('file') && ! Request::get('import')) {
+        /*if (Request::get('file') && ! Request::get('import')) {
             $file = base64_decode(Request::get('file'));
             $file = storage_path('app/'.$file);
             $rows = Excel::load($file, function ($reader) {
@@ -1494,7 +1494,7 @@ class CBController extends Controller
 
             $data['table_columns'] = $table_columns;
             $data['data_import_column'] = $data_import_column;
-        }
+        }*/
 
         return view('crudbooster::import', $data);
     }
@@ -1511,7 +1511,7 @@ class CBController extends Controller
 
     public function postDoImportChunk()
     {
-        $this->cbLoader();
+        /*$this->cbLoader();
         $file_md5 = md5(Request::get('file'));
 
         if (Request::get('file') && Request::get('resume') == 1) {
@@ -1622,6 +1622,8 @@ class CBController extends Controller
         }
 
         return response()->json(['status' => true]);
+        */
+        return "";
     }
 
     public function postDoUploadImportData()
