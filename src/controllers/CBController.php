@@ -1227,9 +1227,13 @@ class CBController extends Controller
                         $child_array[] = $column_data;
                     }
                 }
+                
+                $this->hook_before_add_child($this->arr, $child_array);
 
                 $childtable = CRUDBooster::parseSqlTable($ro['table'])['table'];
-                DB::table($childtable)->insert($child_array);
+                $childId = DB::table($childtable)->insertGetId($child_array);
+
+                $this->hook_after_add_child(!empty($id) ? $id : $lastInsertId, $childId);
             }
         }
 
@@ -1380,8 +1384,15 @@ class CBController extends Controller
                         $lastId++;
                     }
                 }
+                
+
                 $child_array = array_reverse($child_array);
-                DB::table($childtable)->insert($child_array);
+
+                $this->hook_before_edit_child($this->arr, $child_array);
+
+                $childId = DB::table($childtable)->insertGetId($child_array);
+                
+                $this->hook_after_edit_child($id, $childId);
             }
         }
 
@@ -1773,6 +1784,10 @@ class CBController extends Controller
     }
 
     public function hook_before_add(&$arr)
+    {
+    }
+
+    public function hook_before_add_child($arr,&$arr2)
     {
     }
 
