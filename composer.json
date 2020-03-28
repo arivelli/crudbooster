@@ -21,12 +21,9 @@
     "minimum-stability": "stable",
     "require": {
         "php":">=7.1",
-        "barryvdh/laravel-dompdf": "0.8.*",
-        "doctrine/dbal": "~2.3",
-        "unisharp/laravel-filemanager": "1.7.7",
-        "intervention/imagecache":"2.3.3",
-        "imanghafoori/laravel-widgetize": "1.8.*",
-        "phpoffice/phpspreadsheet": "^1.11"
+        "unisharp/laravel-filemanager": "*",
+        "intervention/imagecache":"*",
+        "imanghafoori/laravel-widgetize": "*"
     },
     "autoload": {
         "psr-4": {
