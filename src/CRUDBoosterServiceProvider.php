@@ -69,7 +69,7 @@ class CRUDBoosterServiceProvider extends ServiceProvider
         $this->commands('crudboosterupdate');
         $this->commands(['\arivelli\crudbooster\commands\CrudboosterVersionCommand']);
 
-        $this->app->register('Barryvdh\DomPDF\ServiceProvider');
+        //$this->app->register('Barryvdh\DomPDF\ServiceProvider');
         //$this->app->register('Maatwebsite\Excel\ExcelServiceProvider');
         $this->app->register('Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider');
         $this->app->register('Intervention\Image\ImageServiceProvider');
